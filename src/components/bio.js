@@ -16,7 +16,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 85, height: 85) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -49,7 +49,7 @@ const Bio = () => {
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
-          minWidth: 50,
+          minWidth: 85,
           borderRadius: `100%`,
         }}
         imgStyle={{
@@ -57,11 +57,13 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
+        Écrit par <strong>{author.name}</strong>
+        {author.summary} {" chez "}
+        <a href={`https://twitter.com/${social.twitter}`}>World Of Digits</a>.
+        {" Suivez-moi sur "}
+        <a href={`https://twitter.com/${social.twitter}`}>Github</a>
+        {" et "} <a href={`https://twitter.com/${social.twitter}`}>Linkedin</a>{" "}
+        !
       </p>
     </div>
   )

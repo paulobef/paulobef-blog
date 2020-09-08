@@ -1,0 +1,44 @@
+---
+title: Lumni
+date: "2015-05-01T22:12:03.284Z"
+description: "Analyse de la nouvelle plateforme d'éducation en ligne de France Télévision"
+---
+
+import GoogleTrends from "../../../src/components/GoogleTrends"
+import ReportViewer from "react-lighthouse-viewer"
+import jsonReport from "./report-full.json"
+import Collapsible from "react-collapsible"
+import "./collapsible.css"
+
+Lumni est la nouvelle plateforme d'éducation en ligne de France Télévision. Lancée en Novembre 2019, elle connaît un essor sans précédent suite au confinement de l'ensemble des français, et notamment des élèves, à partir du 17 mars 2020 en raison de l'épidémie de Coronavirus.
+On peut voir sur les deux graphiques ci-dessous la corrélation entre l'intérêt pour le mot-clé "lumni" et "confinement" mesuré par recherche Google (Google Trends).
+
+<div id="widget">
+  <GoogleTrends
+    type="TIMESERIES"
+    geo="FR"
+    keyword="lumni"
+    url="https://ssl.gstatic.com/trends_nrtr/2051_RC11/embed_loader.js"
+  />
+  <GoogleTrends
+    type="TIMESERIES"
+    geo="FR"
+    keyword="confinement"
+    url="https://ssl.gstatic.com/trends_nrtr/2051_RC11/embed_loader.js"
+  />
+</div>
+
+## Analyse de performance
+
+<Collapsible trigger="Voir le rapport desktop complet">
+  <ReportViewer json={jsonReport} />
+</Collapsible>
+
+## Couverture Internet
+
+<iframe
+  id="datafrance"
+  src="http://map.datafrance.info/services?d.d1.id=couverture-4g&d.d1.gr=commune&d.d1.y=2015&d.d1.gp=par-au-moins-un-operateur&d.d1.on=1&d.d1.slug=d1&utm_medium=datagouv&utm_source=datagouv&utm_campaign=reuse_transition_energetique&coords.lat=46.7549166192819&coords.lng=-0.164794921875&zoom=6"
+  width="300"
+  height="375"
+/>
